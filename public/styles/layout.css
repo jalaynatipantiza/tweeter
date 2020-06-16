@@ -19,6 +19,20 @@ html {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px; 
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 90%;
+  align-self: center;
+  
+
+  background-image: url(https://www.transparenttextures.com/patterns/stressed-linen.png);
+    background-color: #FFFFFF;
+    
+
+
 }
 
 
