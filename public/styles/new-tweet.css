@@ -24,11 +24,50 @@ button {
   border:none;
   border-bottom-style: solid;
   border-bottom-color: #545149;
-
   outline: none;
   height: 50px;
 
 }
 .new-tweet {
   padding: 1.5em;
+}
+
+
+article {
+  border-style: solid;
+  
+  margin: 1em;
+ 
+  height: 250px;
+}
+
+.tweet-header {
+  /* border-style: solid; */
+  margin: 1em;
+  height: 40%;
+  
+}
+
+
+.bottom-footer-a {
+  margin: 1em;
+}
+.bottom-footer-b {
+  border-top: solid;
+  margin-top: 5px;
+  margin: 1.5em;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ font-size: large;
+ 
+}
+
+
+.margin-a {
+  margin-top: 0%;
+}
+
+.margin-b {
+  margin-top: 0%;
 }

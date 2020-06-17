@@ -35,7 +35,7 @@
         <i class="fa fa-angle-double-down"></i>
       </div>
     </nav>
-    <header>
+    <header class="profile">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -49,7 +49,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2><b>Compose Tweet</b></h2>
         <form class="textbox"action="/tweets/" method="POST">     
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -58,6 +58,23 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+      <section>
+        <article> 
+          <header class="tweet-header">
+            <p>Super Confused</p>
+          </header>
+          <footer>
+            <div class="bottom-footer-a">
+             
+              <p>This is my dummy quote.</p>  
+            </div>
+            <div class="bottom-footer-b">
+              <p class="margin-a">10 days ago</p> 
+              <p class="margin-b"> ⚑ ↩︎ ♥︎</p>
+            </div>   
+          </footer>
+        </article>
       </section>
     </main>
     <script
