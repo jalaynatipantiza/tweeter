@@ -16,16 +16,18 @@ $(document).ready(function() {
     });
   
     if (decodedData.length > 140) {
-      $("#error-messages").prepend(`<div id="error-message">
-      🚫 Easy there pal, tweet is too long. Plz respect our arbitrary limit of 140 characters. #kthxbye 🚫
+      $("#error-messages").prepend(`<div id="error-message"><b>
+      🚫Easy there pal, tweet is too long. Plz respect our arbitrary limit of 140 characters🚫
+      </b>
       </div>`)
       if ( $( "#error-message" ).first().is( ":hidden" ) ) {
           $( "#error-message" ).slideDown();
         }
     
     } else if (!decodedData) {
-      $("#error-messages").prepend(`<div id="error-message">
+      $("#error-messages").prepend(`<div id="error-message"><b>
       🚫 Easy there pal, you didn't enter anything 🚫
+      </b>
       </div>`)
       if ( $( "#error-message" ).first().is( ":hidden" ) ) {
           $( "#error-message" ).slideDown();

@@ -93,15 +93,16 @@ article:hover {
 }
 
 #error-message {
-  display: flex;
-  justify-content: center;
   margin: 30px;
-  height: 80px;
   margin-right: 200px;
   margin-left: 200px;
   font-size: xx-large;
+  border-width: thin;
   border-style: solid;
   border-color: red;
-  color: red;
+  box-shadow:1px 1px 3px #888;
   display: none;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  text-align: center;
 }
