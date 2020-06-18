@@ -6,16 +6,30 @@
 
 $(document).ready(function() {
   
-  $('#new-post').on('submit', function(event) {
+  $('#new-post').on('submit', function(event) {  
     event.preventDefault();
-
     let data = $(this).serialize();
     let decodedData = decodeURIComponent(data).slice(5);
 
+    $("#error-message").slideUp(() => {
+      $("#error-messages").empty();
+    });
+  
     if (decodedData.length > 140) {
-      alert("Tweet is too long!");
-    } else if (decodedData === "") {
-      alert("No tweet added");
+      $("#error-messages").prepend(`<div id="error-message">
+      🚫 Easy there pal, tweet is too long. Plz respect our arbitrary limit of 140 characters. #kthxbye 🚫
+      </div>`)
+      if ( $( "#error-message" ).first().is( ":hidden" ) ) {
+          $( "#error-message" ).slideDown();
+        }
+    
+    } else if (!decodedData) {
+      $("#error-messages").prepend(`<div id="error-message">
+      🚫 Easy there pal, you didn't enter anything 🚫
+      </div>`)
+      if ( $( "#error-message" ).first().is( ":hidden" ) ) {
+          $( "#error-message" ).slideDown();
+        }
     } else {
       $.post('/tweets/', data, function() {
         loadtweets();       
@@ -25,49 +39,20 @@ $(document).ready(function() {
   
   
   const loadtweets = () => {
-    $('#tweets-container').empty()
     $.getJSON('/tweets/', function(data) {
+      $('#tweets-container').empty()
       renderTweets(data);
       
     });
   };
   
-  
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-  const renderTweets = function(tweets) {
-    $('#container').empty()
-    // loops through tweets
-    for (const tweet of tweets) {
-      // calls createTweetElement for each tweet
-      const newTweet = createTweetElement(tweet);
-      // takes return value and appends it to the tweets container
-      $('#tweets-container').prepend(newTweet);
 
-    }
-      
+  const renderTweets = function(tweets) {
+    $('#container').empty()   
+    for (const tweet of tweets) {
+      const newTweet = createTweetElement(tweet);
+      $('#tweets-container').prepend(newTweet);
+    }    
   };
     
   const createTweetElement = function(tweet) {
@@ -88,7 +73,7 @@ $(document).ready(function() {
       </header>
       <footer>
       <div class="bottom-footer-a">             
-      <p>${text}</p>  
+      <p>${escape(text)}</p>  
       </div>
       <div class="bottom-footer-b">
       <p class="margin-a">${createdAt}</p> 
@@ -99,6 +84,12 @@ $(document).ready(function() {
       `;
     return tweetArticle;
   };
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
     
   loadtweets();
 });
