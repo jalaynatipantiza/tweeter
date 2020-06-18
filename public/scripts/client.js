@@ -18,15 +18,17 @@ $(document).ready(function() {
       alert("No tweet added");
     } else {
       $.post('/tweets/', data, function() {
-        console.log('sucess');
+        loadtweets();       
       });
     }
   });
   
   
   const loadtweets = () => {
+    $('#tweets-container').empty()
     $.getJSON('/tweets/', function(data) {
       renderTweets(data);
+      
     });
   };
   
@@ -56,12 +58,14 @@ $(document).ready(function() {
     }
   ];
   const renderTweets = function(tweets) {
+    $('#container').empty()
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       const newTweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       $('#tweets-container').prepend(newTweet);
+
     }
       
   };
