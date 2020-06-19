@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -28,16 +29,18 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    
+    <nav class="hidden-nav">
       <span>tweeter</span>
       <div class="double-down">
         <span class="source-sans-pro"><b>Write</b> a new tweet</span>
         <i class="fa fa-angle-double-down"></i>
       </div>
     </nav>
+    <div class="main-content">
     <header class="profile">
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img class="profile-picture"src="/images/profile-hex.png"> 
       </div>
       <br>
       <div>
@@ -49,12 +52,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2><b>Compose Tweet</b></h2>
-        <div id="error-messages">
-           
+        <div id="error-messages">       
         </div>
         <form class="textbox" id="new-post" action="/tweets/" method="POST">     
-          <label for="tweet-text">What are you humming about?</label>
+          <label for="tweet-text"><b></b>What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="button-count">
             <button type="submit">Tweet</button>
@@ -65,6 +66,7 @@
       <section id="tweets-container">
       </section>
     </main>
+  </div>
     <script
     src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="

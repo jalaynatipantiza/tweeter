@@ -1,37 +1,32 @@
-/*
-* Client-side JS logic goes here
-* jQuery is already loaded
-* Reminder: Use (and do all your DOM work in) jQuery's document ready function
-*/
-
 $(document).ready(function() {
   
+  //Displays error slide up and down
   $('#new-post').on('submit', function(event) {  
-    event.preventDefault();
     let data = $(this).serialize();
     let decodedData = decodeURIComponent(data).slice(5);
+    event.preventDefault();
 
-    $("#error-message").slideUp(() => {
-      $("#error-messages").empty();
-    });
-  
-    if (decodedData.length > 140) {
-      $("#error-messages").prepend(`<div id="error-message"><b>
-      🚫Easy there pal, tweet is too long. Plz respect our arbitrary limit of 140 characters🚫
-      </b>
-      </div>`)
-      if ( $( "#error-message" ).first().is( ":hidden" ) ) {
-          $( "#error-message" ).slideDown();
-        }
+    $("#error-message").slideUp()
     
-    } else if (!decodedData) {
-      $("#error-messages").prepend(`<div id="error-message"><b>
-      🚫 Easy there pal, you didn't enter anything 🚫
-      </b>
+    if (decodedData.length > 140) {
+      $("#error-messages").empty();
+      $("#error-messages").prepend(`
+      <div id="error-message">
+      <b>🚫Easy there pal, tweet is too long. Plz respect our arbitrary limit of 140 characters🚫</b>
       </div>`)
       if ( $( "#error-message" ).first().is( ":hidden" ) ) {
           $( "#error-message" ).slideDown();
-        }
+        }   
+    } else if (!decodedData) {
+      $("#error-messages").empty();
+      $("#error-messages").prepend(`
+      <div id="error-message">
+      <b>🚫 Easy there pal, you didn't enter anything 🚫</b>
+      </div>`)
+
+      if ( $( "#error-message" ).first().is( ":hidden" ) ) {
+          $( "#error-message" ).slideDown();
+      }
     } else {
       $.post('/tweets/', data, function() {
         loadtweets();       
@@ -47,7 +42,6 @@ $(document).ready(function() {
       
     });
   };
-  
 
   const renderTweets = function(tweets) {
     $('#container').empty()   

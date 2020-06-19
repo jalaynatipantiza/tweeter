@@ -18,18 +18,47 @@ html {
   font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px; 
+  font-size: 20px; 
   display: flex;
   flex-direction: column;
 }
 
 main {
-  width: 90%;
+  margin: 5%;
   align-self: center;
   background-color: #f4f1ec;
 }
 
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+* Additional CSS can be defined below or in other CSS files, as per instructions
+*/
+  
+ 
+
+@media (max-width: 1024px) {
+  .hidden-nav {
+    background-image: url(https://www.transparenttextures.com/patterns/stressed-linen.png);
+    background-color: white;
+  }
+}
+@media (min-width: 1024px) {
+   
+    .profile {
+      width: 40%;
+      height: 80%;
+      margin-right: 1em;
+    }
+    
+    .main-content {
+      display: flex;
+      justify-content: row;
+      margin: 2.5em;
+      
+    }
+    .container {
+      width: 50%;
+      margin-top: 10%;
+      margin-left:70px;
+  }
+}

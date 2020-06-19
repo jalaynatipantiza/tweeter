@@ -2,17 +2,16 @@ button {
   background-color: #4056A1;
   font-family: "bungee";
   color: #FFFFFF;
-
+  
 }
-
 .counter {
   font-family: "Bungee";
-  font-size: xx-large;
+  font-size: 1em;
 }
 .button-count {
   display: flex;
   justify-content: space-between;
-  padding: 8px;
+  padding: 1%;
 }
 .textbox {
   display: flex;
@@ -25,18 +24,16 @@ button {
   border-bottom-style: solid;
   border-bottom-color: #545149;
   outline: none;
-  height: 50px;
 
 }
 .new-tweet {
-  padding: 1.5em;
+  padding: 1%;
 }
-
 
 article {
   border-style: solid;
-  margin: 1em;
-  height: 250px;
+  margin: 3%;
+
 }
 
 
@@ -52,7 +49,7 @@ img {
 }
 
 .tweet-header {
-  margin: 0.7em;
+  margin: 1%;
   height: 30%;
   display: flex;
   flex-direction: row;
@@ -61,7 +58,7 @@ img {
 
 .handle {
   color:lightgray;
-  font-size: xx-large;
+  font-size: 1em;
   margin-top: 1%;
   visibility: hidden;
 }
@@ -69,16 +66,15 @@ article:hover .handle {
   visibility: visible;
 }
 .bottom-footer-a {
-  margin: 1em;
+  margin: 5%;
 }
 .bottom-footer-b {
   border-top: solid;
-  margin-top: 5px;
-  margin: 1.5em;
+  margin: 2%;
  display: flex;
  flex-direction: row;
  justify-content: space-between;
- font-size: large;
+ font-size: 1em;
  
 }
 .margin-a {
@@ -89,14 +85,11 @@ article:hover .handle {
   margin-top: 0%;
 }
 article:hover {
-  box-shadow: 15px 15px grey;
+  box-shadow: 1vw 1vw grey;
 }
 
 #error-message {
-  margin: 30px;
-  margin-right: 200px;
-  margin-left: 200px;
-  font-size: xx-large;
+  margin: 2%;
   border-width: thin;
   border-style: solid;
   border-color: red;
@@ -106,3 +99,4 @@ article:hover {
   background-color: #FFD2D2;
   text-align: center;
 }
+
