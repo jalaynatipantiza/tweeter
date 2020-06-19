@@ -19,3 +19,12 @@ This project focused on using  HTML, CSS, JS, jQuery and AJAX on the front-end. 
 - Chance
 - express
 - md5
+
+## ScreenShots
+!["Screenshot of tweet desk-top view"](https://github.com/jalaynatipantiza/tweeter/blob/master/docs/Desktop-view.png?raw=true)
+
+!["Screenshot of tweet XSS prevention"](https://github.com/jalaynatipantiza/tweeter/blob/master/docs/XSS-prevention.png?raw=true)
+
+!["Screenshot of tweet error message"](https://github.com/jalaynatipantiza/tweeter/blob/master/docs/error-message.png?raw=true)
+
+!["Screenshot of tweet mobile view"](https://github.com/jalaynatipantiza/tweeter/blob/master/docs/mobile-view.png?raw=true)
