@@ -29,7 +29,9 @@ $(document).ready(function() {
       }
     } else {
       $.post('/tweets/', data, function() {
-        loadtweets();       
+        loadtweets();   
+        $("textarea").val('').change();
+        $(".counter").val('140').change();   
       });
     }
   });
