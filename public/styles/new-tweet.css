@@ -2,21 +2,24 @@ button {
   background-color: #4056A1;
   font-family: "bungee";
   color: #FFFFFF;
-  
 }
+
 .counter {
   font-family: "Bungee";
   font-size: 1em;
 }
+
 .button-count {
   display: flex;
   justify-content: space-between;
   padding: 1%;
 }
+
 .textbox {
   display: flex;
   flex-direction: column;
 }
+
 #tweet-text {
   background:none;
   resize: none;
@@ -24,8 +27,8 @@ button {
   border-bottom-style: solid;
   border-bottom-color: #545149;
   outline: none;
-
 }
+
 .new-tweet {
   padding: 1%;
   display: none;
@@ -34,7 +37,6 @@ button {
 article {
   border-style: solid;
   margin: 3%;
-
 }
 
 
@@ -45,12 +47,11 @@ justify-content: flex-start;
 
 
 img {
-  height: fit-content;
   padding-right: 10%;
 }
 
 .tweet-header {
-  margin: 1%;
+  margin: 0.5em;
   height: 30%;
   display: flex;
   flex-direction: row;
@@ -59,8 +60,7 @@ img {
 
 .handle {
   color:lightgray;
-  font-size: 1em;
-  margin-top: 1%;
+  margin-top: .5em;
   visibility: hidden;
 }
 article:hover .handle {
@@ -76,17 +76,16 @@ article:hover .handle {
  flex-direction: row;
  justify-content: space-between;
  font-size: 1em;
- 
 }
 .margin-b.handle{
   color: #545149;
 }
 .margin-a {
-  margin-top: 0%;
+  margin-top: 0.3em;
 }
 
 .margin-b {
-  margin-top: 0%;
+  margin-top: 0.3em;
 }
 article:hover {
   box-shadow: 1vw 1vw grey;
