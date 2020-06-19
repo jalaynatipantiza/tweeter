@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   //Displays error slide up and down
   $('#new-post').on('submit', function(event) {  
     let data = $(this).serialize();
@@ -34,6 +34,15 @@ $(document).ready(function() {
     }
   });
   
+  //button event listener 
+  $(".double-down").on("click", function() {
+    if($( ".new-tweet" ).first().is( ":hidden" )) {
+      $( ".new-tweet" ).slideDown();
+      $( "textarea" ).focus();
+    } else {
+      $( ".new-tweet" ).slideUp();
+    }
+  })
   
   const loadtweets = () => {
     $.getJSON('/tweets/', function(data) {
@@ -56,7 +65,7 @@ $(document).ready(function() {
     const avatar = tweet.user.avatars;
     const handle = tweet.user.handle;
     const text = tweet.content.text;
-    const createdAt = tweet.created_at;
+    const createdAt = moment(tweet.created_at).fromNow();
       
     const tweetArticle = `
       <article> 
@@ -73,7 +82,7 @@ $(document).ready(function() {
       </div>
       <div class="bottom-footer-b">
       <p class="margin-a">${createdAt}</p> 
-      <p class="margin-b"> ⚑ ↩︎ ♥︎</p>
+      <p class="margin-b handle"> ⚑ ↩︎ ♥︎</p>
       </div>   
       </footer>
       </article>  

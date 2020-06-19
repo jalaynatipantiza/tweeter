@@ -28,6 +28,7 @@ button {
 }
 .new-tweet {
   padding: 1%;
+  display: none;
 }
 
 article {
@@ -76,6 +77,9 @@ article:hover .handle {
  justify-content: space-between;
  font-size: 1em;
  
+}
+.margin-b.handle{
+  color: #545149;
 }
 .margin-a {
   margin-top: 0%;
